@@ -1,12 +1,12 @@
 declare namespace node3d {
 	type EventEmitter = import('node:events').EventEmitter;
-	type Img = typeof import('image-raub');
+	type Img = typeof import('@napi-rs/canvas').Image;
 	type TThree = typeof import('three');
 	type TScene = import('three').Scene;
 	type TRenderer = import('three').WebGLRenderer;
 	type TCamera = import('three').Camera;
 	type TWebgl = typeof import('webgl-raub');
-	type TImage = typeof import('image-raub');
+	type TImage = typeof import('@napi-rs/canvas').Image;
 	type TGlfw = typeof import('glfw-raub');
 	type TDocumentOpts = import('glfw-raub').TDocumentOpts;
 	type Document = import('glfw-raub').Document;

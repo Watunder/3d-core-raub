@@ -6,7 +6,7 @@ const _init = (_opts = {}) => {
 		mode: 'windowed',
 		vsync: true,
 		webgl: _opts.webgl || require('webgl-raub'),
-		Image: _opts.Image || require('image-raub'),
+		Image: _opts.Image || require('@napi-rs/canvas').Image,
 		glfw: _opts.glfw || require('glfw-raub'),
 		location: _opts.location || require('./core/location'),
 		navigator: _opts.navigator || require('./core/navigator'),
@@ -31,9 +31,6 @@ const _init = (_opts = {}) => {
 	
 	Document.setWebgl(webgl);
 	Document.setImage(Image);
-	if (!Image.prototype.fillRect) {
-		Image.prototype.fillRect = () => {};
-	}
 	
 	if (isWebGL2) {
 		webgl.useWebGL2();
