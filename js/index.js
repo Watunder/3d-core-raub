@@ -1,12 +1,13 @@
 'use strict';
 
+const skia = require('@napi-rs/canvas');
 
 const _init = (_opts = {}) => {
 	const opts = {
 		mode: 'windowed',
 		vsync: true,
 		webgl: _opts.webgl || require('webgl-raub'),
-		Image: _opts.Image || require('@napi-rs/canvas').Image,
+		Image: _opts.Image || skia.Image,
 		glfw: _opts.glfw || require('glfw-raub'),
 		location: _opts.location || require('./core/location'),
 		navigator: _opts.navigator || require('./core/navigator'),
@@ -144,6 +145,7 @@ const addThreeHelpers = (three, webgl) => {
 };
 
 module.exports = {
+	skia,
 	init,
 	addThreeHelpers,
 };

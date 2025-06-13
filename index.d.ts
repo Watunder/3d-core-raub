@@ -303,6 +303,8 @@ declare namespace node3d {
 		WebVRManager?: WebVRManager,
 	}>;
 	
+	export const skia: typeof import('@napi-rs/canvas');
+
 	/**
 	 * Initialize Node3D. Creates the first window/document and sets up the global environment.
 	 * This function can be called repeatedly, but will ignore further calls.
